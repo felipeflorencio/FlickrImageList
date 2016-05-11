@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FlickrTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="290" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Foh-2I-GPt">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="FlickrImageViewCell" rowHeight="290" id="Jks-7R-qou" customClass="FlickrImageViewCell" customModule="FlickrTest" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="290"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Jks-7R-qou" id="pfw-0d-Art">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="289"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="K3E-TT-kfA">
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="289"/>
+                                                </imageView>
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="NSU-et-ajU">
+                                                    <rect key="frame" x="290" y="135" width="20" height="20"/>
+                                                </activityIndicatorView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="K3E-TT-kfA" secondAttribute="bottom" id="G7M-hv-QUp"/>
+                                                <constraint firstAttribute="trailing" secondItem="K3E-TT-kfA" secondAttribute="trailing" id="Htk-RE-YG4"/>
+                                                <constraint firstItem="NSU-et-ajU" firstAttribute="centerY" secondItem="pfw-0d-Art" secondAttribute="centerY" id="YSf-Y4-9M9"/>
+                                                <constraint firstItem="K3E-TT-kfA" firstAttribute="leading" secondItem="pfw-0d-Art" secondAttribute="leading" id="bQd-kq-7Ec"/>
+                                                <constraint firstItem="K3E-TT-kfA" firstAttribute="top" secondItem="pfw-0d-Art" secondAttribute="top" id="c40-HP-mcP"/>
+                                                <constraint firstItem="NSU-et-ajU" firstAttribute="centerX" secondItem="pfw-0d-Art" secondAttribute="centerX" id="zyE-Be-6n4"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="imagePartyView" destination="K3E-TT-kfA" id="x2F-ZY-iOa"/>
+                                            <outlet property="loaderIndicator" destination="NSU-et-ajU" id="QDO-nr-Rna"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="7jk-h0-zlU"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="P7S-FR-guF"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Foh-2I-GPt" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Hhg-JT-CCy"/>
+                            <constraint firstItem="Foh-2I-GPt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="JcU-7h-Htr"/>
+                            <constraint firstAttribute="trailing" secondItem="Foh-2I-GPt" secondAttribute="trailing" id="Me5-kN-SO7"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Foh-2I-GPt" secondAttribute="bottom" id="aOp-0Q-krk"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="Foh-2I-GPt" id="Sfb-wS-h3A"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="259" y="232"/>
+        </scene>
+    </scenes>
+</document>
